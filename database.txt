@@ -1,0 +1,223 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Oct 17, 2021 at 02:30 PM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 7.0.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `webhead`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `cart_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `product_quantity` int(11) NOT NULL,
+  `product_price` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `photo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `product_id`, `product_quantity`, `product_price`, `name`, `photo`) VALUES
+(90, 129, 12, 2, 39, 'Zara Mangalsutra', '6.jpg'),
+(91, 129, 1, 1, 29, 'Rani Earrings', 'earring3.jpg'),
+(92, 129, 2, 1, 39, 'Emerald Earrings', '14.jpg'),
+(93, 129, 9, 1, 29, 'Rani Earrings', '0.jpg'),
+(94, 129, 7, 7, 29, 'Anjali Bindi', '62.jpg'),
+(105, 132, 1, 1, 29, 'Stud Earrings', '16.jpg'),
+(123, 130, 1, 2, 29, 'Stud Earrings', '16.jpg'),
+(124, 130, 28, 3, 499, 'Alluring Gold Neckwear Set', 'necklesce set.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `Product_ID` int(11) NOT NULL,
+  `Product_Name` varchar(500) DEFAULT NULL,
+  `Product_Price` int(11) DEFAULT NULL,
+  `Product_Description` varchar(500) DEFAULT NULL,
+  `Product_Availability` varchar(500) DEFAULT NULL,
+  `Product_Category` varchar(500) DEFAULT NULL,
+  `Product_Photo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`Product_ID`, `Product_Name`, `Product_Price`, `Product_Description`, `Product_Availability`, `Product_Category`, `Product_Photo`) VALUES
+(1, 'Stud Earrings', 39, '                                                                                                                                Traditional Drop Earrings set in Yellow Gold Plated and Studded with Rubies and Emeralds                                                                                                                ', ' In Stock ', 'Earrings', '14.jpg'),
+(2, 'Neha Earrings', 39, '                                Beautiful Earrings Crafted in 18 Karat Yellow Gold and Studded with Emerald and Diamond                                        ', ' In Stock ', 'Earrings', 'earring5.jpg'),
+(3, 'Piya Necklace', 49, '                                                                                                Adorn your neck with this stunning diamond necklace crafted in 18 Karat White and Rose Gold and Beautiful Pearls                                                                                    ', 'In Stock', 'necklaces', '3.jpg'),
+(5, 'Shahi Bangles', 49, 'Feel like royalty with our Yellow Gold and Ruby Bangle with Oval Design', 'In Stock', 'Bangles', '01.jpg'),
+(6, 'Nishka Bangles', 29, 'Accentuate your everyday ensemble with this pair of bangles crafted in 18 Karat Yellow Gold with black beads.', 'In Stock', 'Bangles', '4.jpg'),
+(7, 'South Indian Bindi', 29, '                                                                                                Floral Pink Bindi  in 18 Karat Yellow Gold palted and studded with Marquise and Round Rubies                                                                                    ', 'In Stock', 'Bindi', 'south-indian-bride.jpg'),
+(8, 'Bridal Bindi', 29, '                                Dare to make a bold statement with this rainbow-detailed bindi plated in 22 Karat Yellow Gold.                            ', 'In Stock', 'Bindi', 'bridalbindi.jpg'),
+(9, 'Rani Earrings', 29, 'Traditional Drop Earrings set in Yellow Gold Plated and Studded with Rubies and Emeralds', ' In Stock ', 'Earrings', '0.jpg'),
+(10, 'Emerald Earrings', 39, 'Beautiful Earrings Crafted in 18 Karat Yellow Gold and Studded with Emerald and Diamond            ', ' In Stock ', 'Earrings', '14.jpg'),
+(12, 'Zara Mangalsutra', 39, 'Celebrate your divine union with this diamond mangalsutra crafted in 18 Karat Rose Gold and subtly studded with black beads.', 'In Stock', 'Necklaces', '6.jpg'),
+(13, 'Shahi Bangles', 49, 'Feel like royalty with our Yellow Gold and Ruby Bangle with Oval Design', 'In Stock', 'Bangles', '01.jpg'),
+(14, 'Nishka Bangles', 29, 'Accentuate your everyday ensemble with this pair of bangles crafted in 18 Karat Yellow Gold with black beads.', 'In Stock', 'Bangles', '4.jpg'),
+(16, 'Mayuri Bindi', 29, 'Dare to make a bold statement with this rainbow-detailed bindi plated in 22 Karat Yellow Gold.', 'In Stock', 'Bindi', '61.jpg'),
+(17, 'Rani Earrings', 29, 'Traditional Drop Earrings set in Yellow Gold Plated and Studded with Rubies and Emeralds', ' In Stock ', 'Earrings', '0.jpg'),
+(18, 'Emerald Earrings', 39, 'Beautiful Earrings Crafted in 18 Karat Yellow Gold and Studded with Emerald and Diamond            ', ' In Stock ', 'Earrings', '14.jpg'),
+(21, 'Shahi Bangles', 49, 'Feel like royalty with our Yellow Gold and Ruby Bangle with Oval Design', 'In Stock', 'Bangles', '01.jpg'),
+(22, 'Nishka Bangles', 29, 'Accentuate your everyday ensemble with this pair of bangles crafted in 18 Karat Yellow Gold with black beads.', 'In Stock', 'Bangles', '4.jpg'),
+(23, 'Anjali Bindi', 29, 'Floral Pink Bindi  in 18 Karat Yellow Gold palted and studded with Marquise and Round Rubies', 'In Stock', 'Bindi', '62.jpg'),
+(28, 'Alluring Gold Neckwear Set', 499, ' Traditional Neckwear and Earrings Set with Tassels set in 22 Karat Yellow Gold', 'In Stock', 'Necklaces Set', 'necklesce set.png'),
+(29, 'Ravenna Ruby Neckwear Set', 399, ' 22 Karat Yellow Gold and Ruby Neckwear Set in Vine Design', 'In Stock', 'Necklaces Set', 'neckleseset2.jpeg'),
+(30, 'Filigree Work Necklace  Set', 299, '                                                                 Traditional Filigree Work Floral Neckwear and Earrings Set crafted in 22 Karat Glossy Yellow Gold, to accentuate the beauty of your occasion wear.                                                         ', 'In Stock', 'Necklaces Set', 'neckleseset1.jpeg'),
+(31, 'Mojari Shoe', 39, ' Mens Wedding Bridal Shoes For Mens Handmade Shoes Indian Mens Wear Indian Shoes Indian Mojari For Men Traditional ', 'In Stock', 'Shoes', 'shoe1.jpg'),
+(32, 'Mens woven leather shoes', 109, ' Mens woven leather shoes,menswear shoe,man mules,Indian handmade,traditional ethnic authentic,men casualwear,beachwear,boho hippie style', 'In Stock', 'Shoes', 'shoe2.jpg'),
+(33, 'White and Gold Mens Shoes', 56, ' White and Gold Mens Shoes, Khussa for Men, Mens Flats ,Mens juttis ,Mens Shoes, Dress shoes men, Indian shoes, wedding shoes for groom', 'In Stock', 'Shoes', 'shoe3.jpg'),
+(34, 'Name Necklace', 99, 'The best way to surprise your loved ones is by our name necklace. Can be customized in any name and available in different designs', 'In Stock', 'necklaces', 'necklese.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `Review_ID` int(255) NOT NULL,
+  `Review` varchar(255) NOT NULL,
+  `User_Id` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`Review_ID`, `Review`, `User_Id`) VALUES
+(1, 'fc', 130),
+(2, 'fc', 130),
+(3, '', 130),
+(4, '', 0),
+(5, '', 132),
+(6, '', 132),
+(7, '', 132),
+(8, '', 132),
+(9, '', 134);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `user-level` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `user-level`) VALUES
+(19, 'test123', 'test123@gmil.com', 'b93939873fd4923043b9dec975811f66', 0),
+(123, 'bijay', 'admin@gmail.com', '4641999a7679fcaef2df0e26d11e3c72', 1),
+(128, 'webheads', 'webheads@gmail.com', 'webhead', 1),
+(129, 'customer', 'customer@gmail.com', '91ec1f9324753048c0096d036a694f86', NULL),
+(130, 'customer1', 'customer1@gmail.com', '91ec1f9324753048c0096d036a694f86', NULL),
+(131, 'johny', 'johny@gmail.com', '527bd5b5d689e2c32ae974c6229ff785', NULL),
+(132, 'bijay', 'bijaydhakaladmin@gmail.com', '5885a515eb6850bc56b8a1f5f8f1607c', 1),
+(133, 'abcd', 'Bijaydhakal000@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', NULL),
+(134, 'final', 'final@gmail.com', '2a1585a864d9e67627c6ae04c807a2c5', NULL);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`),
+  ADD KEY `productid_fkey` (`product_id`),
+  ADD KEY `userId_Fkey` (`user_id`) USING BTREE;
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`Product_ID`);
+
+--
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`Review_ID`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `Product_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `Review_ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=135;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cart`
+--
+ALTER TABLE `cart`
+  ADD CONSTRAINT `productid_fkey` FOREIGN KEY (`product_id`) REFERENCES `product` (`Product_ID`),
+  ADD CONSTRAINT `userid_fkey` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
